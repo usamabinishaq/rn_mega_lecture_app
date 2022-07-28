@@ -43,6 +43,11 @@ import SelectVideoCourse from '../screens/singleScreens/SelectVideoCourse/Select
 import SelectNotes from '../screens/singleScreens/SelectNotes/SelectNotes';
 import SelectCourses from '../screens/singleScreens/selectCourses/SelectCourses';
 import RelevantNotes from '../screens/singleScreens/relevantNotes/RelevantNotes';
+import McqsQuestion from '../screens/singleScreens/yearlyPapers/McqsQuestion';
+import MarkingScheme from '../screens/singleScreens/yearlyPapers/MarkingScheme';
+import JoinLiveClassForm from '../screens/drawer/liveclass/JoinLiveClassForm';
+import StructuredQuestion from '../screens/singleScreens/yearlyPapers/StructuredQuestion';
+import SubscriptionScreen from '../screens/singleScreens/subscriptionScreen/SubscriptionScreen';
 
 // import ForgotPassword from '../screens/authentication/forgotPassword/ForgotPassword';
 // import SignUp from '../screens/authentication/Signup/SignUp';
@@ -96,6 +101,31 @@ function RootNavigation() {
         options={{headerShown: false}}
         name="RelevantNotes"
         component={RelevantNotes}
+      />
+      <RootStackNavigator.Screen
+        options={{headerShown: false}}
+        name="McqsQuestion"
+        component={McqsQuestion}
+      />
+      <RootStackNavigator.Screen
+        options={{headerShown: false}}
+        name="StructuredQuestion"
+        component={StructuredQuestion}
+      />
+      <RootStackNavigator.Screen
+        options={{headerShown: false}}
+        name="MarkingScheme"
+        component={MarkingScheme}
+      />
+      <RootStackNavigator.Screen
+        options={{headerShown: false}}
+        name="JoinLiveClassForm"
+        component={JoinLiveClassForm}
+      />
+      <RootStackNavigator.Screen
+        options={{headerShown: false}}
+        name="SubscriptionScreen"
+        component={SubscriptionScreen}
       />
     </RootStackNavigator.Navigator>
   );

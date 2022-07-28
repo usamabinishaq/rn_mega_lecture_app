@@ -8,8 +8,10 @@ import Appbar from '../../../components/views/Appbar';
 import variables, {width_screen} from '../../../utils/utils';
 import styles from './style';
 
-function YearlyPapersScreen(props) {
+function YearlyPapersScreen({navigation}) {
   const [checkbox, setCheckBox] = useState(false);
+  const [paperType, setPaperType] = useState('');
+
   return (
     <View style={styles.main}>
       <Appbar title={'Yearly Papers'} />
@@ -51,9 +53,9 @@ function YearlyPapersScreen(props) {
         <DropDownPicker
           zIndex={35}
           label={'Question Type'}
-          items={['Select Question Type']}
+          items={['Select Question Type', 'MCQs', 'Structured Questions']}
           onSelection={e => {
-            console.log(e);
+            setPaperType(e);
           }}
         />
         <DropDownPicker
@@ -75,7 +77,14 @@ function YearlyPapersScreen(props) {
           />
         </View>
         <View style={{paddingTop: '7.5%'}} />
-        <ThinButton>{'GO'}</ThinButton>
+        <ThinButton
+          onPress={() => {
+            navigation.navigate(
+              paperType === 'MCQs' ? 'McqsQuestion' : 'StructuredQuestion',
+            );
+          }}>
+          {'GO'}
+        </ThinButton>
       </View>
     </View>
   );

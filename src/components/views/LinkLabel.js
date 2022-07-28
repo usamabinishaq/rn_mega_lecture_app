@@ -3,11 +3,18 @@ import {Pressable, StyleSheet, View} from 'react-native';
 import variables, {width_screen} from '../../utils/utils';
 import BasicText from '../text/BasicText';
 
-function LinkLabel({message, label, onPress}) {
+function LinkLabel({
+  message,
+  label,
+  onPress,
+  style,
+  labelColor = variables.colorPrimary,
+  size = variables.getSize(14),
+}) {
   return (
     <View style={styles.mainContainer}>
       <BasicText
-        size={variables.getSize(14)}
+        size={size}
         color={variables.placeHolderColor}
         fontFamily={variables.interFontMediam}>
         {message}
@@ -15,8 +22,8 @@ function LinkLabel({message, label, onPress}) {
 
       <Pressable onPress={onPress}>
         <BasicText
-          size={variables.getSize(14)}
-          color={variables.colorPrimary}
+          size={size}
+          color={labelColor}
           fontFamily={variables.interFontSemiBold}
           style={{paddingHorizontal: '2.5%'}}>
           {label}

@@ -14,20 +14,23 @@ export const TARGET = require('../assets/images/target.png');
 export const BOOK = require('../assets/images/book.png');
 export const CARD3 = require('../assets/images/card3.png');
 export const DISCOVER = require('../assets/images/discover.png');
+export const Rectangle = require('../assets/images/rectangle.png');
+export const Chemist = require('../assets/images/chemist.png');
+export const Chemist1 = require('../assets/images//chmist1.png');
 
 export const SLIDER1 = require('../assets/images/slider1.png');
 export const SLIDER2 = require('../assets/images/slider2.png');
 export const SLIDER3 = require('../assets/images/slider3.png');
 export const SLIDER4 = require('../assets/images/slider4.png');
 export const Kinematics = require('../assets/images/kinematics.png');
-export const Marking_SchemeImg = require('../assets/images/marking.png');
-export const Structured_Image = require('../assets/images/structred.png');
+export const Upload = require('../assets/images/upload.png');
+export const Done = require('../assets/images/Done.png');
+export const Paper = require('../assets/images/paper.png');
 export const Profile = require('../assets/images/profile.png');
-export const Chemist = require('../assets/images/chemist.png');
-export const Chemist1 = require('../assets/images//chmist1.png');
 
 //SVG
 export const LOGOSVG = '../assets/images/logo_splash.svg';
+
 
 // PNG Icons
 
@@ -39,11 +42,10 @@ export const NOTES_ICON = require('../assets/icons/notes.png');
 export const LOGOUT_ICON = require('../assets/icons/logout.png');
 export const LIVECLASS_ICON = require('../assets/icons/liveclass.png');
 export const PRACTICE_ICON = require('../assets/icons/practice.png');
-export const UPLOAD_ICON = require('../assets/icons/upload.png');
-// export const LIKE_ICON = require('../assets/icons/like.png');
-// export const DISLIKE_ICON = require('../assets/icons/dislike.png');
-// export const list = require('../assets/icons/list.png');
-// export const Next = require('../assets/icons/next.png');
+export const Like = require('../assets/icons/like.png');
+export const Dislike = require('../assets/icons/dislike.png');
+export const list = require('../assets/icons/list.png');
+export const Next = require('../assets/icons/next.png');
 
 //Subscription
 export const SUBSCRIPTION_Starter = require('../assets/icons/starter.png');

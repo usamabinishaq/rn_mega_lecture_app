@@ -18,6 +18,8 @@ const variables = {
   colorFontDark: '#444444',
   colorFontLight: '#44444470',
   colorBackIcon: '#535764',
+  colorWrongAnswer: '#FF323F',
+  colorRightAnswer: '#88D700',
 
   bannerGradient1: ['#004AAD', '#8F94FB'],
   bannerGradient2: ['#3A6186', '#7BC6CC'],
@@ -28,6 +30,9 @@ const variables = {
   cardGradient2: ['#EF9FC2', '#FF75B1'],
   cardGradient3: ['#85BFFF', '#449CFC'],
 
+  colorLink: '#FFD401',
+
+  colorModalBackground: '#8A959E20',
   colorWhite: '#ffffff',
   colorWhiteDim: '#f2f2f2',
   colorGrayDim: '#FAFAFA',
@@ -43,12 +48,19 @@ const variables = {
   fontColorGray: '#A1A1A1',
   fontColorMediumGray: '#716F81',
   colorLightBorder: '#F8F8F8',
+  fontDarkGray: '#808080',
 
   placeHolderColor: '#AFAFAF',
 
   dimGray: '#ababab',
   tagBgColor: '#D9D9D9',
 
+  //Subscription Colors
+  colorGreen: '#49AB5D',
+  colorRed: '#F35E5E',
+  colorYellow: '#FFD550',
+  colorBlue: '#2D81B9',
+  borderColorCard: '#ECECEC',
   // fontBold: "SF-Pro-Display-Bold",
   // fontSemiBold: "SF-Pro-Display-Semibold",
   // fontRegular: "Poppins-Regular",

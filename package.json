@@ -1,5 +1,5 @@
 {
-  "name": "megaLectureApp",
+  "name": "megalectureapp",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -24,11 +24,11 @@
     "react-native-svg": "^12.4.0",
     "react-native-svg-transformer": "^1.0.0",
     "react-native-vector-icons": "^9.2.0",
-    "react-native-video": "^5.2.0",
     "react-native-view-slider": "^1.1.1",
     "react-redux": "^8.0.2",
     "redux": "^4.2.0",
-    "redux-thunk": "^2.4.1"
+    "redux-thunk": "^2.4.1",
+    "toggle-switch-react-native": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
