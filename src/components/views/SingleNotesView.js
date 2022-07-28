@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import variables, {width_screen} from '../../utils/utils';
+import AlertModal from '../modals/AlertModal';
+import DownloadModal from '../modals/DownloadModal';
 import Heading from '../text/Heading';
 
-function SingleNotesView({bulletsType, title, index}) {
+function SingleNotesView({bulletsType, title, index, onDownload}) {
   return (
     <View style={styles.main}>
       {bulletsType === 'numeric' ? (
@@ -30,7 +32,7 @@ function SingleNotesView({bulletsType, title, index}) {
         style={{flex: 1}}>
         {title}
       </Heading>
-      <Pressable onPress={() => {}}>
+      <Pressable onPress={() => onDownload(title, index)}>
         <Heading
           size={variables.getSize(12)}
           color={variables.colorPrimary}

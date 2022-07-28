@@ -9,9 +9,10 @@ function DropDownPicker({label, items, onSelection, zIndex = 1}) {
   const [openMenu, setOpenMenu] = useState(false);
   const defaultItem = items[0];
 
-  const _handleMenu = () => {
+  const _handleMenu = e => {
+    onSelection(e);
     setOpenMenu(!openMenu);
-    onSelection;
+    setSelectedItem(e);
   };
   return (
     <>
@@ -48,7 +49,7 @@ function DropDownPicker({label, items, onSelection, zIndex = 1}) {
           <Menu
             menuItems={items}
             onSelect={e => {
-              // setSelectedItem(e);
+              _handleMenu(e);
             }}
           />
         ) : null}
@@ -72,7 +73,12 @@ const Menu = ({menuItems, onSelect}) => {
       <ScrollView>
         {menuItems.map((item, index) => {
           return (
-            <Pressable key={index} style={styles.menu} onPress={onSelect(item)}>
+            <Pressable
+              key={index}
+              style={styles.menu}
+              onPress={() => {
+                onSelect(item);
+              }}>
               <Heading
                 fontFamily={variables.interFontRegular}
                 color={variables.colorFontDark}

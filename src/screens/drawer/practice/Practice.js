@@ -8,7 +8,7 @@ import MENUICON from '../../../assets/icons/menu.svg';
 import CustomTextInput from '../../../components/inputText/CustomTextInput';
 import SearchIcon from '../../../assets/icons/search.svg';
 import variables, {height_screen, width_screen} from '../../../utils/utils';
-import Video from 'react-native-video';
+// import Video from 'react-native-video';
 
 import PractiseCard from '../../../components/views/cards/PractiseCard';
 import CoursesCard from '../../../components/views/cards/CoursesCard';
@@ -37,7 +37,7 @@ function Practice({navigation}) {
         current = 0;
         setSelectedBanner(0);
       }
-    }, 5000);
+    }, 2000);
   }, [selectedBanner]);
   const _handleBanners = () => {
     switch (selectedBanner) {
@@ -163,7 +163,11 @@ function Practice({navigation}) {
             />
             <View style={styles.innerCards}>
               <CoursesCard onPress={() => {}} />
-              <LiveClassCard onPress={() => {}} />
+              <LiveClassCard
+                onPress={() => {
+                  navigation.navigate('JoinLiveClassForm');
+                }}
+              />
             </View>
           </View>
           {/* {Discover Video Lectures} */}
@@ -213,7 +217,9 @@ function Practice({navigation}) {
               onPress={() => {}}
             />
             <ThinButton
-              onPress={() => {}}
+              onPress={() => {
+                navigation.navigate('Notes');
+              }}
               style={{paddingHorizontal: '5%', marginTop: '5%'}}>
               {'All Notes'}
             </ThinButton>

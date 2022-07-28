@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   headingStyle: {paddingTop: '5%', paddingHorizontal: '5%', textAlign: 'left'},
-
   viewBox: {
     paddingHorizontal: 20,
     justifyContent: 'center',

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ScrollView, View} from 'react-native';
+import AlertModal from '../../../components/modals/AlertModal';
+import DownloadModal from '../../../components/modals/DownloadModal';
 import Heading from '../../../components/text/Heading';
 import Appbar from '../../../components/views/Appbar';
 import SingleNotesView from '../../../components/views/SingleNotesView';
@@ -9,10 +11,46 @@ import styles from './style';
 
 function RelevantNotes({navigation, route}) {
   let {title} = route.params.course;
+  const [isDownload, setDownload] = useState(false);
+  const [downloadPressed, setDownloadpressed] = useState(false);
+  const [chapterTitle, setChapterTitle] = useState('');
+  const [chapterNo, setChapterNo] = useState('');
+
   return (
     <View style={styles.main}>
       <Appbar title={title + ' Notes'} />
       <View style={{flex: 0.9}}>
+        {isDownload ? (
+          !downloadPressed ? (
+            <DownloadModal
+              title={'Download Notes'}
+              chapterName={
+                chapterNo !== ''
+                  ? `Chapter ${chapterNo}: ${chapterTitle}`
+                  : `${chapterTitle}`
+              }
+              downloadLeft={2}
+              onDownload={() => {
+                setDownloadpressed(true);
+              }}
+              onClose={() => {
+                setDownload(false);
+              }}
+            />
+          ) : (
+            <AlertModal
+              title={'Download Notes'}
+              message={'Notes Downloaded Successfully'}
+              success={true}
+              onPress={() => {
+                setDownload(false);
+              }}
+              onClose={() => {
+                setDownload(false);
+              }}
+            />
+          )
+        ) : null}
         <ScrollView>
           <Heading
             size={variables.getSize(14)}
@@ -23,7 +61,17 @@ function RelevantNotes({navigation, route}) {
           </Heading>
           {Worksheets.map((item, index) => {
             return (
-              <SingleNotesView key={index} bulletsType={'dots'} title={item} />
+              <SingleNotesView
+                key={index}
+                bulletsType={'dots'}
+                title={item}
+                onDownload={title => {
+                  setChapterNo('');
+                  setChapterTitle(title);
+                  setDownloadpressed(false);
+                  setDownload(true);
+                }}
+              />
             );
           })}
           <Heading
@@ -40,6 +88,14 @@ function RelevantNotes({navigation, route}) {
                 bulletsType={'numeric'}
                 title={item}
                 index={index + 1}
+                onDownload={(title, index) => {
+                  console.log('INDEXX==>', index);
+
+                  setChapterNo(index);
+                  setChapterTitle(title);
+                  setDownloadpressed(false);
+                  setDownload(true);
+                }}
               />
             );
           })}

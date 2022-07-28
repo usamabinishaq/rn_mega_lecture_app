@@ -5,8 +5,9 @@ import Icon from 'react-native-vector-icons/Entypo';
 import {LOGO} from '../../constants/constants';
 import variables from '../../utils/utils';
 import Heading from '../text/Heading';
+import ToggleSwitch from 'toggle-switch-react-native';
 
-function Appbar({leftIcon, title, timer, onTimer, onLeftIconPress}) {
+function Appbar({leftIcon, title, timer, onTimer, onLeftIconPress, isTimer}) {
   let ImageIcon = leftIcon;
   const navigate = useNavigation();
 
@@ -31,12 +32,27 @@ function Appbar({leftIcon, title, timer, onTimer, onLeftIconPress}) {
           size={variables.fontSizePMedium}
           color={variables.fontColorMain}
           fontFamily={variables.interFontSemiBold}
-          style={{flex: 1, textAlign: 'center', right: 5}}>
+          style={{flex: 1, textAlign: 'center', right: timer ? -25 : 5}}>
           {title}
         </Heading>
       ) : (
         <Image source={LOGO} style={styles.image} />
       )}
+      {timer ? (
+        <ToggleSwitch
+          isOn={isTimer}
+          onColor={variables.colorPrimary}
+          offColor={variables.fontDarkGray}
+          label={'Timer'}
+          labelStyle={{
+            color: variables.colorBackIcon,
+            fontSize: variables.fontSizeSmall,
+            fontFamily: variables.interFontMediam,
+          }}
+          size="small"
+          onToggle={onTimer}
+        />
+      ) : null}
     </View>
   );
 }
